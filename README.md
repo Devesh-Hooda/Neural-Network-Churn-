@@ -158,4 +158,4 @@ OPTIMIZER = 'adam'
 -
 
 ## Contributors
-- [Your Name](https://github.com/Devesh-Hooda)
+- [Devesh Hooda](https://github.com/Devesh-Hooda)
