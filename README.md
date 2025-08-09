@@ -42,8 +42,7 @@ churn-prediction/
 
 ### 1. Data Preprocessing
 ```python
-#
-df = pd.read_csv('data/raw/telco_churn.csv')
+# df = pd.read_csv('data/raw/telco_churn.csv')
 df = remove_irrelevant_columns(df)  # customerID, PhoneService
 df = encode_categorical_features(df)
 X_train, X_val, X_test = stratified_split(df)  # 80-10-10 split
@@ -60,8 +59,7 @@ The neural network features:
 - Sigmoid output layer with bias initialization
 
 ```python
-#
-model = Sequential([
+# model = Sequential([
     Dense(32, activation='relu', input_shape=(42,)),
     BatchNormalization(),
     Dropout(0.3),
@@ -86,8 +84,7 @@ tuner.search(X_train, y_train, validation_data=(X_val, y_val))
 ### 4. Business Impact Analysis
 The evaluation calculates financial impact:
 ```python
-# 
-saved_value = tp * retention_rate * customer_value
+# saved_value = tp * retention_rate * customer_value
 wasted_cost = fp * retention_cost
 missed_loss = fn * customer_value
 net_savings = saved_value - wasted_cost - missed_loss
@@ -154,8 +151,7 @@ OPTIMIZER = 'adam'
 
 3. **Implement new features**:
    ```python
-   # In 02_preprocessing.py
-   df['value_tenure_ratio'] = df['TotalCharges'] / (df['tenure'] + 1)
+   # df['value_tenure_ratio'] = df['TotalCharges'] / (df['tenure'] + 1)
    ```
 
 ## License
