@@ -42,7 +42,7 @@ churn-prediction/
 
 ### 1. Data Preprocessing
 ```python
-# Key steps in 02_preprocessing.py
+#
 df = pd.read_csv('data/raw/telco_churn.csv')
 df = remove_irrelevant_columns(df)  # customerID, PhoneService
 df = encode_categorical_features(df)
@@ -60,7 +60,7 @@ The neural network features:
 - Sigmoid output layer with bias initialization
 
 ```python
-# From 03_model_training.py
+#
 model = Sequential([
     Dense(32, activation='relu', input_shape=(42,)),
     BatchNormalization(),
@@ -86,7 +86,7 @@ tuner.search(X_train, y_train, validation_data=(X_val, y_val))
 ### 4. Business Impact Analysis
 The evaluation calculates financial impact:
 ```python
-# In 04_evaluation.py
+# 
 saved_value = tp * retention_rate * customer_value
 wasted_cost = fp * retention_cost
 missed_loss = fn * customer_value
@@ -103,21 +103,11 @@ pip install -r requirements.txt
 ```
 
 ### Run Pipeline
-```bash
-# Run full pipeline
-python src/01_data_loading.py
-python src/02_preprocessing.py
-python src/03_model_training.py
-python src/04_evaluation.py
 
-# Run with custom config
-python src/03_model_training.py --epochs 200 --batch_size 64
-```
+Future iterations of code will lead to changes in this
 
 ### Key Configuration
 Edit `config.py` for:
-
-Future iterations of code will lead to changes in this
 
 ```python
 # Business parameters
